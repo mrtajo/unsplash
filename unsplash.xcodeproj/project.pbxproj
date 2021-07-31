@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -111,8 +111,36 @@
 				F59B2CAA011C8E6700C849CF /* Pods-unsplashTests.debug.xcconfig */,
 				95F6CC367123AA692AC45B95 /* Pods-unsplashTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE058E1026B4ED1C007ED253 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EE058E1226B4EDC1007ED253 /* Main */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EE058E1126B4ED2B007ED253 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE426A6B26B4DDEE00A16F1E /* Assets.xcassets */,
+				EE426A7026B4DDEE00A16F1E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE058E1226B4EDC1007ED253 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EE426A6226B4DDED00A16F1E /* AppDelegate.swift */,
+				EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */,
+				EE426A6626B4DDED00A16F1E /* ViewController.swift */,
+				EE426A6826B4DDED00A16F1E /* Main.storyboard */,
+				EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		EE426A5626B4DDED00A16F1E = {
@@ -140,13 +168,8 @@
 		EE426A6126B4DDED00A16F1E /* unsplash */ = {
 			isa = PBXGroup;
 			children = (
-				EE426A6226B4DDED00A16F1E /* AppDelegate.swift */,
-				EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */,
-				EE426A6626B4DDED00A16F1E /* ViewController.swift */,
-				EE426A6826B4DDED00A16F1E /* Main.storyboard */,
-				EE426A6B26B4DDEE00A16F1E /* Assets.xcassets */,
-				EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */,
-				EE426A7026B4DDEE00A16F1E /* Info.plist */,
+				EE058E1026B4ED1C007ED253 /* Classes */,
+				EE058E1126B4ED2B007ED253 /* Resources */,
 			);
 			path = unsplash;
 			sourceTree = "<group>";
@@ -589,7 +612,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7YV3XSFHJM;
-				INFOPLIST_FILE = unsplash/Info.plist;
+				INFOPLIST_FILE = unsplash/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -611,7 +634,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7YV3XSFHJM;
-				INFOPLIST_FILE = unsplash/Info.plist;
+				INFOPLIST_FILE = unsplash/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
