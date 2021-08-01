@@ -18,6 +18,9 @@
 		EE426A6F26B4DDEE00A16F1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */; };
 		EE426A7A26B4DDEE00A16F1E /* unsplashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A7926B4DDEE00A16F1E /* unsplashTests.swift */; };
 		EE426A8526B4DDEE00A16F1E /* unsplashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A8426B4DDEE00A16F1E /* unsplashUITests.swift */; };
+		EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7026B65C0800DBACEA /* NetworkClient.swift */; };
+		EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7326B6641E00DBACEA /* HomeViewController.swift */; };
+		EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF27C7526B6642F00DBACEA /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		EE426A8426B4DDEE00A16F1E /* unsplashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashUITests.swift; sourceTree = "<group>"; };
 		EE426A8626B4DDEE00A16F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE7B82490CCCD0825EA1F881 /* Pods-unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.release.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.release.xcconfig"; sourceTree = "<group>"; };
+		EEF27C7026B65C0800DBACEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		EEF27C7326B6641E00DBACEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EEF27C7526B6642F00DBACEA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		F59B2CAA011C8E6700C849CF /* Pods-unsplashTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashTests.debug.xcconfig"; path = "Target Support Files/Pods-unsplashTests/Pods-unsplashTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA68CFFA8E95A59B438F203B /* Pods-unsplash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.debug.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +123,8 @@
 		EE058E1026B4ED1C007ED253 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EE058E1326B5143F007ED253 /* Common */,
+				EEF27C7226B6640000DBACEA /* Home */,
 				EE058E1226B4EDC1007ED253 /* Main */,
 			);
 			path = Classes;
@@ -141,6 +149,14 @@
 				EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		EE058E1326B5143F007ED253 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EEF27C6F26B65BE600DBACEA /* Network */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		EE426A5626B4DDED00A16F1E = {
@@ -190,6 +206,23 @@
 				EE426A8626B4DDEE00A16F1E /* Info.plist */,
 			);
 			path = unsplashUITests;
+			sourceTree = "<group>";
+		};
+		EEF27C6F26B65BE600DBACEA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EEF27C7026B65C0800DBACEA /* NetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EEF27C7226B6640000DBACEA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EEF27C7526B6642F00DBACEA /* Home.storyboard */,
+				EEF27C7326B6641E00DBACEA /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +336,7 @@
 				EE426A6F26B4DDEE00A16F1E /* LaunchScreen.storyboard in Resources */,
 				EE426A6C26B4DDEE00A16F1E /* Assets.xcassets in Resources */,
 				EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */,
+				EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,9 +464,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE426A6726B4DDED00A16F1E /* ViewController.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,
 				EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */,
+				EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
