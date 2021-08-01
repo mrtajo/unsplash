@@ -23,8 +23,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Setups
     private func setup() {
-        guard let url = URL(string: "https://api.unsplash.com/photos") else { return }
-        networkClient.query(url: url) { [weak self] result in
+        networkClient.request(urlString: "https://api.unsplash.com/photos") { (result: Result<[Photo], ResultError>) in
             print(result)
         }
     }

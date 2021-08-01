@@ -17,6 +17,7 @@
 		EE426A6F26B4DDEE00A16F1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */; };
 		EE426A7A26B4DDEE00A16F1E /* unsplashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A7926B4DDEE00A16F1E /* unsplashTests.swift */; };
 		EE426A8526B4DDEE00A16F1E /* unsplashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A8426B4DDEE00A16F1E /* unsplashUITests.swift */; };
+		EECAB04A26B6939200E24071 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAB04926B6939200E24071 /* Photos.swift */; };
 		EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7026B65C0800DBACEA /* NetworkClient.swift */; };
 		EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7326B6641E00DBACEA /* HomeViewController.swift */; };
 		EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF27C7526B6642F00DBACEA /* Home.storyboard */; };
@@ -62,6 +63,7 @@
 		EE426A8426B4DDEE00A16F1E /* unsplashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashUITests.swift; sourceTree = "<group>"; };
 		EE426A8626B4DDEE00A16F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE7B82490CCCD0825EA1F881 /* Pods-unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.release.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.release.xcconfig"; sourceTree = "<group>"; };
+		EECAB04926B6939200E24071 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		EEF27C7026B65C0800DBACEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EEF27C7326B6641E00DBACEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EEF27C7526B6642F00DBACEA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 			path = unsplashUITests;
 			sourceTree = "<group>";
 		};
+		EECAB04826B690E700E24071 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EECAB04926B6939200E24071 /* Photos.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EEF27C6F26B65BE600DBACEA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 		EEF27C7226B6640000DBACEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EECAB04826B690E700E24071 /* Model */,
 				EEF27C7526B6642F00DBACEA /* Home.storyboard */,
 				EEF27C7326B6641E00DBACEA /* HomeViewController.swift */,
 			);
@@ -476,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECAB04A26B6939200E24071 /* Photos.swift in Sources */,
 				EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,

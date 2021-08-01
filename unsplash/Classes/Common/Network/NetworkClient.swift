@@ -7,31 +7,37 @@
 
 import Foundation
 
-enum QueryError: Error {
+enum ResultError: Error {
+    case network(error: ResponseError)
+    case url
+    case parse
+    case unknown(error: Error?)
+}
+
+enum ResponseError: Error {
     case badRequest
     case unauthorized
     case forbidden
     case notFound
     case unsplash
-    case network(error: Error)
-    case parse
-    case unknown
 }
 
 class NetworkClient {
-    typealias QueryResult = Result<Any, QueryError>
-    typealias JSONDictionary = [String: Any]
+    private let accessKey = "Bu2ZhYMKtcf2ghmCHddOBb5cvMSDpq1YlBuGTbODLI8"
+    private let session = URLSession(configuration: .default)
     
-    let session = URLSession(configuration: .default)
+    private var task: URLSessionDataTask?
     
-    var task: URLSessionDataTask?
-    
-    func query(url: URL, completion: @escaping (QueryResult) -> Void) {
+    func request<ResultData: Decodable>(urlString: String, completion: @escaping (Result<ResultData, ResultError>) -> Void) {
+        
+        guard var urlComponents = URLComponents(string: urlString) else { return completion(.failure(.url)) }
+        urlComponents.query = "client_id=\(accessKey)"
+        guard let url = urlComponents.url else { return completion(.failure(.url)) }
         
         task?.cancel()
         
         task = session.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else { return completion(.failure(.unknown)) }
+            guard let self = self else { return completion(.failure(.unknown(error: nil))) }
             
             defer {
                 self.task = nil
@@ -42,44 +48,35 @@ class NetworkClient {
             }
             
             if let error = error {
-                return completion(.failure(.network(error: error)))
+                return completion(.failure(.unknown(error: error)))
             } else if let data = data, let response = response as? HTTPURLResponse {
                 switch response.statusCode {
                 case 200:
                     return completion(self.result(data))
                 case 400:
-                    return completion(.failure(.badRequest))
+                    return completion(.failure(.network(error: .badRequest)))
                 case 401:
-                    return completion(.failure(.unauthorized))
+                    return completion(.failure(.network(error: .unauthorized)))
                 case 403:
-                    return completion(.failure(.forbidden))
+                    return completion(.failure(.network(error: .forbidden)))
                 case 404:
-                    return completion(.failure(.notFound))
+                    return completion(.failure(.network(error: .notFound)))
                 default:
-                    return completion(.failure(.unsplash))
+                    return completion(.failure(.network(error: .unsplash)))
                 }
             } else {
-                return completion(.failure(.unknown))
+                return completion(.failure(.unknown(error: nil)))
             }
         }
         task?.resume()
     }
     
-    func result(_ data: Data) -> QueryResult {
-        var response: JSONDictionary?
-        
+    func result<ResultData: Decodable>(_ data: Data) -> Result<ResultData, ResultError> {
         do {
-            response = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
-        } catch let parseError as NSError {
-            print(parseError)
-            return .failure(.parse)
+            let model = try JSONDecoder().decode(ResultData.self, from: data)
+            return .success(model)
+        } catch let error {
+            return .failure(.unknown(error: error))
         }
-        
-        guard let response = response else { return .failure(.unknown)}
-        
-        print(response)
-        
-        
-        return .success(data)
     }
 }
