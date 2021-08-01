@@ -12,7 +12,6 @@
 		8CE4AD70C885EF7A56112C97 /* Pods_unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4B98514F706A16F672041 /* Pods_unsplash.framework */; };
 		EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A6226B4DDED00A16F1E /* AppDelegate.swift */; };
 		EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */; };
-		EE426A6726B4DDED00A16F1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A6626B4DDED00A16F1E /* ViewController.swift */; };
 		EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6826B4DDED00A16F1E /* Main.storyboard */; };
 		EE426A6C26B4DDEE00A16F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6B26B4DDEE00A16F1E /* Assets.xcassets */; };
 		EE426A6F26B4DDEE00A16F1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */; };
@@ -21,6 +20,8 @@
 		EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7026B65C0800DBACEA /* NetworkClient.swift */; };
 		EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7326B6641E00DBACEA /* HomeViewController.swift */; };
 		EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF27C7526B6642F00DBACEA /* Home.storyboard */; };
+		EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7826B66B2900DBACEA /* SearchViewController.swift */; };
+		EEF27C7B26B66B4000DBACEA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF27C7A26B66B4000DBACEA /* Search.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,6 @@
 		EE426A5F26B4DDED00A16F1E /* unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426A6226B4DDED00A16F1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE426A6626B4DDED00A16F1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EE426A6926B4DDED00A16F1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE426A6B26B4DDEE00A16F1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE426A6E26B4DDEE00A16F1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +65,8 @@
 		EEF27C7026B65C0800DBACEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EEF27C7326B6641E00DBACEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EEF27C7526B6642F00DBACEA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		EEF27C7826B66B2900DBACEA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EEF27C7A26B66B4000DBACEA /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		F59B2CAA011C8E6700C849CF /* Pods-unsplashTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashTests.debug.xcconfig"; path = "Target Support Files/Pods-unsplashTests/Pods-unsplashTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA68CFFA8E95A59B438F203B /* Pods-unsplash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.debug.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 				EE058E1326B5143F007ED253 /* Common */,
 				EEF27C7226B6640000DBACEA /* Home */,
 				EE058E1226B4EDC1007ED253 /* Main */,
+				EEF27C7726B66B0E00DBACEA /* Search */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -144,7 +147,6 @@
 			children = (
 				EE426A6226B4DDED00A16F1E /* AppDelegate.swift */,
 				EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */,
-				EE426A6626B4DDED00A16F1E /* ViewController.swift */,
 				EE426A6826B4DDED00A16F1E /* Main.storyboard */,
 				EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */,
 			);
@@ -223,6 +225,15 @@
 				EEF27C7326B6641E00DBACEA /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		EEF27C7726B66B0E00DBACEA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EEF27C7A26B66B4000DBACEA /* Search.storyboard */,
+				EEF27C7826B66B2900DBACEA /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 				EE426A6C26B4DDEE00A16F1E /* Assets.xcassets in Resources */,
 				EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */,
 				EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */,
+				EEF27C7B26B66B4000DBACEA /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,8 +476,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
-				EE426A6726B4DDED00A16F1E /* ViewController.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,
 				EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */,
 				EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */,
