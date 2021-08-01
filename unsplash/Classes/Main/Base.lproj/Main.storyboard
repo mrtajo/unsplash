@@ -39,7 +39,7 @@
         <scene sceneID="35D-L5-vpM">
             <objects>
                 <navigationController id="CIG-mI-NGz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="drn-NR-2xc"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="drn-NR-2xc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="G5R-uu-OJ2">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -67,7 +67,7 @@
         <scene sceneID="D7o-9L-6Sb">
             <objects>
                 <navigationController id="mKk-yw-j4Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="ofK-fu-tdr"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="ofK-fu-tdr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oug-RV-jPc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -81,4 +81,8 @@
             <point key="canvasLocation" x="-613" y="184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
 </document>
