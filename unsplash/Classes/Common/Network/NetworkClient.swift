@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import LocalAuthentication
 
 enum NetworkError: Error {
     /// Resposne
@@ -27,7 +26,6 @@ enum NetworkError: Error {
 class NetworkClient {
     private let accessKey = "Bu2ZhYMKtcf2ghmCHddOBb5cvMSDpq1YlBuGTbODLI8"
     private let session = URLSession(configuration: .default)
-    
     private var task: URLSessionDataTask?
     
     func request<ResultData: Decodable>(urlString: String, completion: @escaping (Result<ResultData, NetworkError>) -> Void) {
@@ -79,7 +77,7 @@ class NetworkClient {
         task?.resume()
     }
     
-    func result<ResultData: Decodable>(_ data: Data) -> Result<ResultData, NetworkError> {
+    private func result<ResultData: Decodable>(_ data: Data) -> Result<ResultData, NetworkError> {
         do {
             let model = try JSONDecoder().decode(ResultData.self, from: data)
             return .success(model)

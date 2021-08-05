@@ -7,14 +7,13 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeNamespace {
     // MARK: - Properties
     private let networkClient = NetworkClient()
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
 
-    
     // MARK: - View lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +22,13 @@ class HomeViewController: UIViewController {
     
     // MARK: - Setups
     private func setup() {
-        networkClient.request(urlString: "https://api.unsplash.com/photos") { (result: Result<[Photo], NetworkError>) in
-            print(result)
+        API.requestPhotos { result in
+            switch result {
+            case .success(let photos):
+                print(photos)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 
