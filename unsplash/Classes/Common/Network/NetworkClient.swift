@@ -6,20 +6,22 @@
 //
 
 import Foundation
+import LocalAuthentication
 
-enum ResultError: Error {
-    case network(error: ResponseError)
-    case url
-    case parse
-    case unknown(error: Error?)
-}
-
-enum ResponseError: Error {
+enum NetworkError: Error {
+    /// Resposne
     case badRequest
     case unauthorized
     case forbidden
     case notFound
-    case unsplash
+    case notDefined(code: Int)
+    /// Parsing
+    case badUrl
+    case badDecode
+    /// Connection
+    case offline
+    /// Etc
+    case unknown
 }
 
 class NetworkClient {
@@ -28,55 +30,61 @@ class NetworkClient {
     
     private var task: URLSessionDataTask?
     
-    func request<ResultData: Decodable>(urlString: String, completion: @escaping (Result<ResultData, ResultError>) -> Void) {
+    func request<ResultData: Decodable>(urlString: String, completion: @escaping (Result<ResultData, NetworkError>) -> Void) {
         
-        guard var urlComponents = URLComponents(string: urlString) else { return completion(.failure(.url)) }
+        guard var urlComponents = URLComponents(string: urlString) else { return completion(.failure(.badUrl)) }
         urlComponents.query = "client_id=\(accessKey)"
-        guard let url = urlComponents.url else { return completion(.failure(.url)) }
+        guard let url = urlComponents.url else { return completion(.failure(.badUrl)) }
         
         task?.cancel()
         
         task = session.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else { return completion(.failure(.unknown(error: nil))) }
+            guard let self = self else { return completion(.failure(.unknown)) }
             
             defer {
                 self.task = nil
             }
             
-            if let data = data, let text = String(data: data, encoding: .utf8) {
-                print(text)
-            }
+//            if let data = data, let text = String(data: data, encoding: .utf8) {
+//                print(text)
+//            }
             
             if let error = error {
-                return completion(.failure(.unknown(error: error)))
+                let nsError = error as NSError
+                switch nsError.code {
+                case -1009:
+                    return completion(.failure(.offline))
+                default:
+                    return completion(.failure(.unknown))
+                }
             } else if let data = data, let response = response as? HTTPURLResponse {
                 switch response.statusCode {
                 case 200:
                     return completion(self.result(data))
                 case 400:
-                    return completion(.failure(.network(error: .badRequest)))
+                    return completion(.failure(.badRequest))
                 case 401:
-                    return completion(.failure(.network(error: .unauthorized)))
+                    return completion(.failure(.unauthorized))
                 case 403:
-                    return completion(.failure(.network(error: .forbidden)))
+                    return completion(.failure(.forbidden))
                 case 404:
-                    return completion(.failure(.network(error: .notFound)))
+                    return completion(.failure(.notFound))
                 default:
-                    return completion(.failure(.network(error: .unsplash)))
+                    return completion(.failure(.notDefined(code: response.statusCode)))
                 }
             } else {
-                return completion(.failure(.unknown(error: nil)))
+                return completion(.failure(.unknown))
             }
         }
         task?.resume()
     }
     
-    func result<ResultData: Decodable>(_ data: Data) -> Result<ResultData, ResultError> {
+    func result<ResultData: Decodable>(_ data: Data) -> Result<ResultData, NetworkError> {
         do {
             let model = try JSONDecoder().decode(ResultData.self, from: data)
             return .success(model)
-        } catch let error {
-            return .failure(.unknown(error: error))
+        } catch {
+            return .failure(.badDecode)
         }
     }
 }

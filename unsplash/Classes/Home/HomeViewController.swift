@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Setups
     private func setup() {
-        networkClient.request(urlString: "https://api.unsplash.com/photos") { (result: Result<[Photo], ResultError>) in
+        networkClient.request(urlString: "https://api.unsplash.com/photos") { (result: Result<[Photo], NetworkError>) in
             print(result)
         }
     }
