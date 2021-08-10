@@ -16,6 +16,7 @@ struct Home {
     struct Action {
         typealias Model = Home.Model
         typealias API = Home.API
+        static var photos = [Model.Photo]()
     }
 }
 

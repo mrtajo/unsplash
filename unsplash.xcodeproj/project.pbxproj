@@ -218,14 +218,6 @@
 			path = unsplashUITests;
 			sourceTree = "<group>";
 		};
-		EEBD0C7626BB979600A16B34 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				EEBD0C7A26BB9A0600A16B34 /* Home.API.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		EEBD0C7926BB97D400A16B34 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,18 +227,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		EEBD0C7C26BB9B5600A16B34 /* Action */ = {
-			isa = PBXGroup;
-			children = (
-				EEBD0C7D26BB9B9D00A16B34 /* Home.Action.swift */,
-			);
-			path = Action;
-			sourceTree = "<group>";
-		};
 		EECAB04826B690E700E24071 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EEBD0C7D26BB9B9D00A16B34 /* Home.Action.swift */,
+				EEBD0C7A26BB9A0600A16B34 /* Home.API.swift */,
 				EECAB04926B6939200E24071 /* Home.Model.swift */,
+				EEBD0C7726BB97CB00A16B34 /* Home.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,11 +249,8 @@
 		EEF27C7226B6640000DBACEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				EEBD0C7C26BB9B5600A16B34 /* Action */,
-				EEBD0C7626BB979600A16B34 /* API */,
 				EECAB04826B690E700E24071 /* Model */,
 				EEBD0C7926BB97D400A16B34 /* View */,
-				EEBD0C7726BB97CB00A16B34 /* Home.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

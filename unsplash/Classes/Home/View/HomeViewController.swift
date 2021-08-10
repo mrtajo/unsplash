@@ -8,9 +8,6 @@
 import UIKit
 
 class HomeViewController: UIViewController, HomeNamespace {
-    // MARK: - Properties
-    private let networkClient = NetworkClient()
-    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
 
@@ -22,16 +19,9 @@ class HomeViewController: UIViewController, HomeNamespace {
     
     // MARK: - Setups
     private func setup() {
-        API.requestPhotos { result in
-            switch result {
-            case .success(let photos):
-                print(photos)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        Action.fetchPhotos()
     }
-
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
