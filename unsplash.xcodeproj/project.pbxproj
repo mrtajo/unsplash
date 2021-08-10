@@ -10,6 +10,8 @@
 		1743F146B504971A43F91901 /* Pods_unsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758110A9E1CD3F6B822ABB2F /* Pods_unsplashTests.framework */; };
 		31D90487046FE073652A0A4D /* Pods_unsplash_unsplashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9802BD4EBCFA4C2ED406EC /* Pods_unsplash_unsplashUITests.framework */; };
 		8CE4AD70C885EF7A56112C97 /* Pods_unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4B98514F706A16F672041 /* Pods_unsplash.framework */; };
+		EE21058126C239280079EA86 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21058026C239280079EA86 /* WebViewController.swift */; };
+		EE21058326C239750079EA86 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE21058226C239750079EA86 /* Web.storyboard */; };
 		EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A6226B4DDED00A16F1E /* AppDelegate.swift */; };
 		EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */; };
 		EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6826B4DDED00A16F1E /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		758110A9E1CD3F6B822ABB2F /* Pods_unsplashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unsplashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F6CC367123AA692AC45B95 /* Pods-unsplashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashTests.release.xcconfig"; path = "Target Support Files/Pods-unsplashTests/Pods-unsplashTests.release.xcconfig"; sourceTree = "<group>"; };
 		BBC4B98514F706A16F672041 /* Pods_unsplash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unsplash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE21058026C239280079EA86 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		EE21058226C239750079EA86 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		EE426A5F26B4DDED00A16F1E /* unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426A6226B4DDED00A16F1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,8 +169,18 @@
 			isa = PBXGroup;
 			children = (
 				EEF27C6F26B65BE600DBACEA /* Network */,
+				EE21057F26C239080079EA86 /* Web */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EE21057F26C239080079EA86 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				EE21058026C239280079EA86 /* WebViewController.swift */,
+				EE21058226C239750079EA86 /* Web.storyboard */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		EE426A5626B4DDED00A16F1E = {
@@ -377,6 +391,7 @@
 				EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */,
 				EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */,
 				EEF27C7B26B66B4000DBACEA /* Search.storyboard in Resources */,
+				EE21058326C239750079EA86 /* Web.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +522,7 @@
 				EECAB04A26B6939200E24071 /* Home.Model.swift in Sources */,
 				EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */,
 				EEBD0C7B26BB9A0600A16B34 /* Home.API.swift in Sources */,
+				EE21058126C239280079EA86 /* WebViewController.swift in Sources */,
 				EEBD0C7E26BB9B9D00A16B34 /* Home.Action.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,
