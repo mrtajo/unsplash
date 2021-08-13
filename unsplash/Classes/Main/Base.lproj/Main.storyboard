@@ -17,6 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="CIG-mI-NGz" kind="relationship" relationship="viewControllers" id="0Nh-FT-H4z"/>
+                        <segue destination="uX4-2u-w0j" kind="relationship" relationship="viewControllers" id="o34-op-RKf"/>
                         <segue destination="mKk-yw-j4Z" kind="relationship" relationship="viewControllers" id="S2b-Dp-xrj"/>
                     </connections>
                 </tabBarController>
@@ -33,7 +34,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OD-oO-m1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="-508"/>
+            <point key="canvasLocation" x="-35" y="-833"/>
         </scene>
         <!--Home-->
         <scene sceneID="35D-L5-vpM">
@@ -50,7 +51,34 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDQ-Af-16J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613" y="-508"/>
+            <point key="canvasLocation" x="-613" y="-833"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="AKC-hg-VaS">
+            <objects>
+                <navigationController id="uX4-2u-w0j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Web" image="globe" catalog="system" id="WdR-Re-LLQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JzR-dd-rgy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SbQ-gf-aEn" kind="relationship" relationship="rootViewController" id="WRo-Cj-SEV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlA-9J-H0j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-613" y="-160"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="reH-m2-7Rn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Web" id="SbQ-gf-aEn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="U2f-vk-ILV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R75-WQ-H3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-41" y="-160"/>
         </scene>
         <!--Search-->
         <scene sceneID="hH7-Nm-uIn">
@@ -61,7 +89,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnO-A5-lf8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="184"/>
+            <point key="canvasLocation" x="-31" y="511"/>
         </scene>
         <!--Search-->
         <scene sceneID="D7o-9L-6Sb">
@@ -78,10 +106,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmv-9I-veJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613" y="184"/>
+            <point key="canvasLocation" x="-613" y="511"/>
         </scene>
     </scenes>
     <resources>
+        <image name="globe" catalog="system" width="128" height="121"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
