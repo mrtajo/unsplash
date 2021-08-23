@@ -20,13 +20,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="D7C-8C-2cl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePhotoCell" id="D7C-8C-2cl" customClass="HomePhotoCell" customModule="unsplash" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D7C-8C-2cl" id="evL-FV-dIK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vkW-MN-55y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vkW-MN-55y" firstAttribute="leading" secondItem="evL-FV-dIK" secondAttribute="leading" id="IZp-dq-K3d"/>
+                                                <constraint firstItem="vkW-MN-55y" firstAttribute="top" secondItem="evL-FV-dIK" secondAttribute="top" id="Por-E5-AWb"/>
+                                                <constraint firstAttribute="trailing" secondItem="vkW-MN-55y" secondAttribute="trailing" id="q2w-Uc-3bU"/>
+                                                <constraint firstAttribute="bottom" secondItem="vkW-MN-55y" secondAttribute="bottom" id="z2i-cZ-gS5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="vkW-MN-55y" id="kke-P4-5aF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

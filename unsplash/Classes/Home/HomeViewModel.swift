@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit.UIColor
+import UIKit.UIImage
 
 struct HomeViewModel {
     let networkClient = NetworkClient()
@@ -27,5 +29,5 @@ struct HomeViewModel {
                     print(error)
                 }
             }
-    }
+    }    
 }

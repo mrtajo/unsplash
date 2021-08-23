@@ -13,7 +13,9 @@ class Publisher<T> {
     
     var value: T {
         didSet {
-            subscriber?(value)
+            DispatchQueue.main.async {
+                self.subscriber?(self.value)
+            }
         }
     }
     

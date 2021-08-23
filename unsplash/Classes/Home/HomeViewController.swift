@@ -27,19 +27,24 @@ class HomeViewController: UIViewController {
     
     // MARK: - Setups
     private func binds() {
-        viewModel.photos.bind { photos in
+        viewModel.photos.bind { [weak self] photos in
             guard photos.count > 0 else { return }
-            print(photos)
+            self?.tableView.reloadData()
         }
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.photos.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if viewModel.photos.value.indices ~= indexPath.row {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomePhotoCell", for: indexPath) as! HomePhotoCell
+            cell.viewModel = HomePhotoCellViewModel(model: viewModel.photos.value[indexPath.row])
+            return cell
+        }
         return UITableViewCell()
     }
 }
