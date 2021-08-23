@@ -27,10 +27,16 @@ class NetworkClient {
     private let accessKey = "Bu2ZhYMKtcf2ghmCHddOBb5cvMSDpq1YlBuGTbODLI8"
     private let session = URLSession(configuration: .default)
     private var task: URLSessionDataTask?
+    private var _urlString: String = ""
     
-    func request<ResultData: Decodable>(urlString: String, completion: @escaping (Result<ResultData, NetworkError>) -> Void) {
+    func urlString(_ urlString: String) -> NetworkClient {
+        _urlString = urlString
+        return self
+    }
+    
+    func request<ResultData: Decodable>(completion: @escaping (Result<ResultData, NetworkError>) -> Void) {
         
-        guard var urlComponents = URLComponents(string: urlString) else { return completion(.failure(.badUrl)) }
+        guard var urlComponents = URLComponents(string: _urlString) else { return completion(.failure(.badUrl)) }
         urlComponents.query = "client_id=\(accessKey)"
         guard let url = urlComponents.url else { return completion(.failure(.badUrl)) }
         

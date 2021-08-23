@@ -19,10 +19,9 @@
 		EE426A6F26B4DDEE00A16F1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6D26B4DDEE00A16F1E /* LaunchScreen.storyboard */; };
 		EE426A7A26B4DDEE00A16F1E /* unsplashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A7926B4DDEE00A16F1E /* unsplashTests.swift */; };
 		EE426A8526B4DDEE00A16F1E /* unsplashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A8426B4DDEE00A16F1E /* unsplashUITests.swift */; };
-		EEBD0C7826BB97CB00A16B34 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBD0C7726BB97CB00A16B34 /* Home.swift */; };
-		EEBD0C7B26BB9A0600A16B34 /* Home.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBD0C7A26BB9A0600A16B34 /* Home.API.swift */; };
-		EEBD0C7E26BB9B9D00A16B34 /* Home.Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBD0C7D26BB9B9D00A16B34 /* Home.Action.swift */; };
-		EECAB04A26B6939200E24071 /* Home.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAB04926B6939200E24071 /* Home.Model.swift */; };
+		EE65124B26D35BB000C4930B /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65124A26D35BB000C4930B /* Publisher.swift */; };
+		EE65125326D36B7800C4930B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125226D36B7800C4930B /* HomeViewModel.swift */; };
+		EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125426D36BCF00C4930B /* HomeModel.swift */; };
 		EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7026B65C0800DBACEA /* NetworkClient.swift */; };
 		EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7326B6641E00DBACEA /* HomeViewController.swift */; };
 		EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF27C7526B6642F00DBACEA /* Home.storyboard */; };
@@ -69,11 +68,10 @@
 		EE426A8026B4DDEE00A16F1E /* unsplashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unsplashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426A8426B4DDEE00A16F1E /* unsplashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashUITests.swift; sourceTree = "<group>"; };
 		EE426A8626B4DDEE00A16F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE65124A26D35BB000C4930B /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		EE65125226D36B7800C4930B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EE65125426D36BCF00C4930B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		EE7B82490CCCD0825EA1F881 /* Pods-unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.release.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.release.xcconfig"; sourceTree = "<group>"; };
-		EEBD0C7726BB97CB00A16B34 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		EEBD0C7A26BB9A0600A16B34 /* Home.API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.API.swift; sourceTree = "<group>"; };
-		EEBD0C7D26BB9B9D00A16B34 /* Home.Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.Action.swift; sourceTree = "<group>"; };
-		EECAB04926B6939200E24071 /* Home.Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.Model.swift; sourceTree = "<group>"; };
 		EEF27C7026B65C0800DBACEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EEF27C7326B6641E00DBACEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EEF27C7526B6642F00DBACEA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -168,6 +166,7 @@
 		EE058E1326B5143F007ED253 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EE65124926D35B6E00C4930B /* MVVM */,
 				EEF27C6F26B65BE600DBACEA /* Network */,
 				EE21057F26C239080079EA86 /* Web */,
 			);
@@ -232,6 +231,22 @@
 			path = unsplashUITests;
 			sourceTree = "<group>";
 		};
+		EE65124926D35B6E00C4930B /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				EE65124A26D35BB000C4930B /* Publisher.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		EE65125126D36B6800C4930B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE65125226D36B7800C4930B /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EEBD0C7926BB97D400A16B34 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,10 +259,7 @@
 		EECAB04826B690E700E24071 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EEBD0C7D26BB9B9D00A16B34 /* Home.Action.swift */,
-				EEBD0C7A26BB9A0600A16B34 /* Home.API.swift */,
-				EECAB04926B6939200E24071 /* Home.Model.swift */,
-				EEBD0C7726BB97CB00A16B34 /* Home.swift */,
+				EE65125426D36BCF00C4930B /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +277,7 @@
 			children = (
 				EECAB04826B690E700E24071 /* Model */,
 				EEBD0C7926BB97D400A16B34 /* View */,
+				EE65125126D36B6800C4930B /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -519,16 +532,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECAB04A26B6939200E24071 /* Home.Model.swift in Sources */,
+				EE65125326D36B7800C4930B /* HomeViewModel.swift in Sources */,
 				EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */,
-				EEBD0C7B26BB9A0600A16B34 /* Home.API.swift in Sources */,
 				EE21058126C239280079EA86 /* WebViewController.swift in Sources */,
-				EEBD0C7E26BB9B9D00A16B34 /* Home.Action.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,
 				EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */,
+				EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */,
 				EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */,
-				EEBD0C7826BB97CB00A16B34 /* Home.swift in Sources */,
+				EE65124B26D35BB000C4930B /* Publisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

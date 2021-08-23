@@ -1,14 +1,14 @@
 //
-//  Home.Model.swift
+//  HomeModel.swift
 //  unsplash
 //
-//  Created by mrtajo on 2021/08/01.
+//  Created by mrtajo on 2021/08/23.
 //
 
 import Foundation
 import UIKit.UIColor
 
-extension Home.Model {
+struct HomeModel {
     // MARK: - Photo
     struct Photo: Decodable {
         let id: String

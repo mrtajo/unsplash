@@ -7,21 +7,31 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, HomeNamespace {
+class HomeViewController: UIViewController {
+    // MARK: - Properties
+    let viewModel = HomeViewModel()
+    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - View lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        binds()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchPhotos()
     }
     
     // MARK: - Setups
-    private func setup() {
-        Action.fetchPhotos()
+    private func binds() {
+        viewModel.photos.bind { photos in
+            guard photos.count > 0 else { return }
+            print(photos)
+        }
     }
-    
 }
 
 extension HomeViewController: UITableViewDataSource {
