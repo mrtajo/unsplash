@@ -13,7 +13,7 @@ struct HomeViewModel {
     let networkClient = NetworkClient()
     
     // MARK: - Binds properties
-    let photos: Publisher<[HomeModel.Photo]> = Publisher([HomeModel.Photo]())
+    let photos: Publisher<[HomeViewModel.Photo]> = Publisher([HomeViewModel.Photo]())
     
     // MARK: - Commands
     func fetchPhotos() {
@@ -22,12 +22,46 @@ struct HomeViewModel {
             .request { (result: Result<[HomeModel.Photo], NetworkError>) in
                 switch result {
                 case .success(let photos):
-                    var total: [HomeModel.Photo] = self.photos.value
-                    total.append(contentsOf: photos)
+                    let viewModels = photos.map { HomeViewModel.Photo(model: $0) }
+                    var total: [HomeViewModel.Photo] = self.photos.value
+                    total.append(contentsOf: viewModels)
                     self.photos.value = total
                 case .failure(let error):
                     print(error)
                 }
             }
     }    
+}
+
+extension HomeViewModel {
+    struct Photo {
+        let width: Int
+        let height: Int
+        let color: UIColor?
+        let likedByUser: Bool
+        let userName: String
+        let imageUrlString: String
+        let image: Publisher<UIImage?> = Publisher(nil)
+        
+        init(model: HomeModel.Photo) {
+            width = model.width
+            height = model.height
+            color = UIColor(hexString: model.color)
+            likedByUser = model.likedByUser
+            userName = model.user.name
+            imageUrlString = model.urls.regular
+            self.requestImage()
+        }
+        
+        func requestImage() {
+            guard let url = URL(string: imageUrlString) else { return }
+            let this = self
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                      let data = data, error == nil,
+                      let image = UIImage(data: data) else { return }
+                this.image.value = image
+            }.resume()
+        }
+    }
 }

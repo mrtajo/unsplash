@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     // MARK: - View lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         binds()
     }
     
@@ -26,6 +27,9 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Setups
+    private func setup() {
+        title = "Unsplash"
+    }
     private func binds() {
         viewModel.photos.bind { [weak self] photos in
             guard photos.count > 0 else { return }
@@ -43,7 +47,7 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomePhotoCell", for: indexPath) as! HomePhotoCell
-        cell.viewModel = HomePhotoCellViewModel(model: viewModel.photos.value[indexPath.row])
+        cell.viewModel = viewModel.photos.value[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

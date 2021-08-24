@@ -23,7 +23,6 @@
 		EE65125326D36B7800C4930B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125226D36B7800C4930B /* HomeViewModel.swift */; };
 		EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125426D36BCF00C4930B /* HomeModel.swift */; };
 		EE65125826D371A600C4930B /* HomePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125726D371A600C4930B /* HomePhotoCell.swift */; };
-		EE65125A26D3ADDF00C4930B /* HomePhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125926D3ADDF00C4930B /* HomePhotoCellViewModel.swift */; };
 		EE65125D26D3AF1100C4930B /* UIColor+hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */; };
 		EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7026B65C0800DBACEA /* NetworkClient.swift */; };
 		EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7326B6641E00DBACEA /* HomeViewController.swift */; };
@@ -75,7 +74,6 @@
 		EE65125226D36B7800C4930B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE65125426D36BCF00C4930B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		EE65125726D371A600C4930B /* HomePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoCell.swift; sourceTree = "<group>"; };
-		EE65125926D3ADDF00C4930B /* HomePhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoCellViewModel.swift; sourceTree = "<group>"; };
 		EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexString.swift"; sourceTree = "<group>"; };
 		EE7B82490CCCD0825EA1F881 /* Pods-unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.release.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.release.xcconfig"; sourceTree = "<group>"; };
 		EEF27C7026B65C0800DBACEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				EE65125726D371A600C4930B /* HomePhotoCell.swift */,
-				EE65125926D3ADDF00C4930B /* HomePhotoCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -536,7 +533,6 @@
 				EE65125326D36B7800C4930B /* HomeViewModel.swift in Sources */,
 				EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */,
 				EE21058126C239280079EA86 /* WebViewController.swift in Sources */,
-				EE65125A26D3ADDF00C4930B /* HomePhotoCellViewModel.swift in Sources */,
 				EE65125826D371A600C4930B /* HomePhotoCell.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE65125D26D3AF1100C4930B /* UIColor+hexString.swift in Sources */,
