@@ -24,7 +24,8 @@ class HomePhotoCell: UITableViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func prepareForReuse() {
+        viewModel = nil
+        photoImageView.image = nil
     }
 }

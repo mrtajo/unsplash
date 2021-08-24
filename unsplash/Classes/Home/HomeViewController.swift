@@ -38,14 +38,21 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.photos.value.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if viewModel.photos.value.indices ~= indexPath.row {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HomePhotoCell", for: indexPath) as! HomePhotoCell
-            cell.viewModel = HomePhotoCellViewModel(model: viewModel.photos.value[indexPath.row])
-            return cell
+        guard viewModel.photos.value.indices ~= indexPath.row else {
+            return UITableViewCell()
         }
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomePhotoCell", for: indexPath) as! HomePhotoCell
+        cell.viewModel = HomePhotoCellViewModel(model: viewModel.photos.value[indexPath.row])
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard viewModel.photos.value.indices ~= indexPath.row else {
+            return 100
+        }
+        let photo = viewModel.photos.value[indexPath.row]
+        let height = self.view.bounds.width * CGFloat(photo.height) / CGFloat(photo.width)
+        return height
     }
 }
 
