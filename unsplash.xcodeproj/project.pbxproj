@@ -12,6 +12,13 @@
 		8CE4AD70C885EF7A56112C97 /* Pods_unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4B98514F706A16F672041 /* Pods_unsplash.framework */; };
 		EE21058126C239280079EA86 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21058026C239280079EA86 /* WebViewController.swift */; };
 		EE21058326C239750079EA86 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE21058226C239750079EA86 /* Web.storyboard */; };
+		EE2EFBB826E35F4E004FA24C /* ScanControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2EFBB226E35F4E004FA24C /* ScanControl.xib */; };
+		EE2EFBB926E35F4E004FA24C /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2EFBB326E35F4E004FA24C /* Scanner.storyboard */; };
+		EE2EFBBA26E35F4E004FA24C /* ScanControlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2EFBB426E35F4E004FA24C /* ScanControlable.swift */; };
+		EE2EFBBB26E35F4E004FA24C /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2EFBB526E35F4E004FA24C /* ScannerViewModel.swift */; };
+		EE2EFBBC26E35F4E004FA24C /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2EFBB626E35F4E004FA24C /* ScannerViewController.swift */; };
+		EE2EFBBD26E35F4E004FA24C /* ScanControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2EFBB726E35F4E004FA24C /* ScanControl.swift */; };
+		EE2EFBC126E368D1004FA24C /* ScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2EFBC026E368D1004FA24C /* ScanModel.swift */; };
 		EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A6226B4DDED00A16F1E /* AppDelegate.swift */; };
 		EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */; };
 		EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426A6826B4DDED00A16F1E /* Main.storyboard */; };
@@ -57,6 +64,13 @@
 		BBC4B98514F706A16F672041 /* Pods_unsplash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unsplash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE21058026C239280079EA86 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		EE21058226C239750079EA86 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
+		EE2EFBB226E35F4E004FA24C /* ScanControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanControl.xib; sourceTree = "<group>"; };
+		EE2EFBB326E35F4E004FA24C /* Scanner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Scanner.storyboard; sourceTree = "<group>"; };
+		EE2EFBB426E35F4E004FA24C /* ScanControlable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanControlable.swift; sourceTree = "<group>"; };
+		EE2EFBB526E35F4E004FA24C /* ScannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		EE2EFBB626E35F4E004FA24C /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		EE2EFBB726E35F4E004FA24C /* ScanControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanControl.swift; sourceTree = "<group>"; };
+		EE2EFBC026E368D1004FA24C /* ScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModel.swift; sourceTree = "<group>"; };
 		EE426A5F26B4DDED00A16F1E /* unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426A6226B4DDED00A16F1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE426A6426B4DDED00A16F1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +188,7 @@
 				EE65124926D35B6E00C4930B /* MVVM */,
 				EEF27C6F26B65BE600DBACEA /* Network */,
 				EE21057F26C239080079EA86 /* Web */,
+				EE2EFBB126E35E77004FA24C /* Scanner */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -185,6 +200,20 @@
 				EE21058226C239750079EA86 /* Web.storyboard */,
 			);
 			path = Web;
+			sourceTree = "<group>";
+		};
+		EE2EFBB126E35E77004FA24C /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				EE2EFBB726E35F4E004FA24C /* ScanControl.swift */,
+				EE2EFBB226E35F4E004FA24C /* ScanControl.xib */,
+				EE2EFBB426E35F4E004FA24C /* ScanControlable.swift */,
+				EE2EFBC026E368D1004FA24C /* ScanModel.swift */,
+				EE2EFBB326E35F4E004FA24C /* Scanner.storyboard */,
+				EE2EFBB626E35F4E004FA24C /* ScannerViewController.swift */,
+				EE2EFBB526E35F4E004FA24C /* ScannerViewModel.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 		EE426A5626B4DDED00A16F1E = {
@@ -400,7 +429,9 @@
 				EE426A6F26B4DDEE00A16F1E /* LaunchScreen.storyboard in Resources */,
 				EE426A6C26B4DDEE00A16F1E /* Assets.xcassets in Resources */,
 				EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */,
+				EE2EFBB926E35F4E004FA24C /* Scanner.storyboard in Resources */,
 				EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */,
+				EE2EFBB826E35F4E004FA24C /* ScanControl.xib in Resources */,
 				EEF27C7B26B66B4000DBACEA /* Search.storyboard in Resources */,
 				EE21058326C239750079EA86 /* Web.storyboard in Resources */,
 			);
@@ -530,16 +561,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2EFBC126E368D1004FA24C /* ScanModel.swift in Sources */,
 				EE65125326D36B7800C4930B /* HomeViewModel.swift in Sources */,
 				EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */,
 				EE21058126C239280079EA86 /* WebViewController.swift in Sources */,
+				EE2EFBBB26E35F4E004FA24C /* ScannerViewModel.swift in Sources */,
 				EE65125826D371A600C4930B /* HomePhotoCell.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE65125D26D3AF1100C4930B /* UIColor+hexString.swift in Sources */,
+				EE2EFBBC26E35F4E004FA24C /* ScannerViewController.swift in Sources */,
+				EE2EFBBA26E35F4E004FA24C /* ScanControlable.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,
 				EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */,
 				EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */,
 				EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */,
+				EE2EFBBD26E35F4E004FA24C /* ScanControl.swift in Sources */,
 				EE65124B26D35BB000C4930B /* Publisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

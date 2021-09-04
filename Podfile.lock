@@ -1,16 +1,22 @@
 PODS:
   - Alamofire (5.4.2)
+  - ZXingObjC (3.2.2):
+    - ZXingObjC/All (= 3.2.2)
+  - ZXingObjC/All (3.2.2)
 
 DEPENDENCIES:
   - Alamofire
+  - ZXingObjC (~> 3.2.1)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ZXingObjC
 
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  ZXingObjC: 2c95a0dc52daac69b23ec78fad8fa2fec05f8981
 
-PODFILE CHECKSUM: b807746e6edb7e74d2d035252aa2dc18db21ad5f
+PODFILE CHECKSUM: 22859a7ce7c8b1a93068d70b44df2a51a2a1e48e
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2

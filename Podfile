@@ -7,6 +7,7 @@ target 'unsplash' do
 
   # Pods for unsplash
   pod 'Alamofire'
+  pod 'ZXingObjC', '~> 3.2.1'
 
   target 'unsplashTests' do
     inherit! :search_paths
