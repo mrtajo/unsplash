@@ -23,7 +23,7 @@ class ScannerViewModel {
     
     // MARK: - result (Published)
     /// 코드 스캔 결과를 Result 로 반환합니다
-    @Published var result: Result<ScanResult, Error> = .success(.initial)
+    @Published var result: Result<ScanResult, ScanError> = .success(.initial)
     enum ScanResult {
         case initial
         case domain(url: URL, inWebView: Bool, type: String)
@@ -102,20 +102,17 @@ class ScannerViewModel {
     }
     private func callbackDomain(_ domain: String) {
         guard let url = URL(string: domain) else {
-            scanControl?.shouldScan = true
+            result = .failure(.badUrl)
             return
         }
-        // Scanner.Action.stopScan(withTransition: false)
-        // result = .success(.domain(url: url, inWebView: domain.shouldPresentInWebView, type: domain.scanType))
+        result = .success(.domain(url: url, inWebView: true, type: ""))
     }
     private func callbackNone() {
-        // Scanner.Action.stopScan()
         result = .success(.none)
     }
     private func callbackError(_ error: ScanError?) {
         guard let error = error else { return }
         print("[Scanner] didFail")
-        // Scanner.Action.stopScan()
         result = .failure(error)
     }
 }

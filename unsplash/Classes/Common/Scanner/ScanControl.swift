@@ -14,6 +14,18 @@ import VideoToolbox
 enum ScanError: Error {
     case unknown
     case camera
+    case badUrl
+    
+    func message() -> String {
+        switch self {
+        case .unknown:
+            return "알 수 없는 오류입니다.\n잠시 후 다시 시도해 주세요"
+        case .camera:
+            return "스캐너 초기화에 실패하였습니다.\n잠시 후 다시 시도해주세요."
+        case .badUrl:
+            return "잘못된 url 입니다."
+        }
+    }
 }
 
 class ScanControl: UIControl, ScanControlable {
@@ -85,7 +97,11 @@ class ScanControl: UIControl, ScanControlable {
     public func start() {
         guard authStatus == .authorized else {
             if authStatus == .denied, let settingURL = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(settingURL, options: [:], completionHandler: nil)
+                self.parentViewController?
+                    .alert(message: "스캐너를 사용하시려면 카메라 권한이 필요합니다. 카메라 권한을 설정하시겠습니까?", buttonTitles: ["취소", "설정"]) { action in
+                        guard case action.style = UIAlertAction.Style.default else { return }
+                        UIApplication.shared.open(settingURL, options: [:], completionHandler: nil)
+                    }
             }
             return
         }
@@ -183,7 +199,6 @@ extension ScanControl {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 if self.isFailedCamera == true {
-//                    self.didFail?(CustomError(code: "SCAN_CAMERA_ERROR", message: "스캐너 초기화에 실패하였습니다. 다시 시도해주세요."))
                     self.didFail?(.camera)
                     
                     print("[Scanner] startRunning failed")

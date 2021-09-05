@@ -34,6 +34,8 @@
 		EEC4B47726E3873600BFD9D6 /* Lens.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC4B47626E3873600BFD9D6 /* Lens.xcassets */; };
 		EEC4B49326E38C9200BFD9D6 /* LensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B49226E38C9200BFD9D6 /* LensViewController.swift */; };
 		EEC4B49526E38CB000BFD9D6 /* Lens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC4B49426E38CB000BFD9D6 /* Lens.storyboard */; };
+		EEC4B49726E4949600BFD9D6 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B49626E4949600BFD9D6 /* UIViewController+alert.swift */; };
+		EEC4B49926E4990100BFD9D6 /* UIView+parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B49826E4990100BFD9D6 /* UIView+parent.swift */; };
 		EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7026B65C0800DBACEA /* NetworkClient.swift */; };
 		EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7326B6641E00DBACEA /* HomeViewController.swift */; };
 		EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF27C7526B6642F00DBACEA /* Home.storyboard */; };
@@ -96,6 +98,8 @@
 		EEC4B47626E3873600BFD9D6 /* Lens.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Lens.xcassets; sourceTree = "<group>"; };
 		EEC4B49226E38C9200BFD9D6 /* LensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensViewController.swift; sourceTree = "<group>"; };
 		EEC4B49426E38CB000BFD9D6 /* Lens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lens.storyboard; sourceTree = "<group>"; };
+		EEC4B49626E4949600BFD9D6 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		EEC4B49826E4990100BFD9D6 /* UIView+parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+parent.swift"; sourceTree = "<group>"; };
 		EEF27C7026B65C0800DBACEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EEF27C7326B6641E00DBACEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EEF27C7526B6642F00DBACEA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */,
+				EEC4B49626E4949600BFD9D6 /* UIViewController+alert.swift */,
+				EEC4B49826E4990100BFD9D6 /* UIView+parent.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -583,11 +589,13 @@
 				EE2EFBC126E368D1004FA24C /* ScanModel.swift in Sources */,
 				EE65125326D36B7800C4930B /* HomeViewModel.swift in Sources */,
 				EEF27C7926B66B2900DBACEA /* SearchViewController.swift in Sources */,
+				EEC4B49726E4949600BFD9D6 /* UIViewController+alert.swift in Sources */,
 				EE21058126C239280079EA86 /* WebViewController.swift in Sources */,
 				EE2EFBBB26E35F4E004FA24C /* ScannerViewModel.swift in Sources */,
 				EE65125826D371A600C4930B /* HomePhotoCell.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE65125D26D3AF1100C4930B /* UIColor+hexString.swift in Sources */,
+				EEC4B49926E4990100BFD9D6 /* UIView+parent.swift in Sources */,
 				EE2EFBBC26E35F4E004FA24C /* ScannerViewController.swift in Sources */,
 				EE2EFBBA26E35F4E004FA24C /* ScanControlable.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,

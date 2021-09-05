@@ -23,8 +23,31 @@ class ScannerViewController: UIViewController {
     // MARK: - View lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /// binds
+        binds()
+        setup() /// setup - 스캐너를 초기화 하면, $scanControl 이 published 되므로 binds 전에 setup 이 수행되면 안됨
+    }
+    
+    // MARK: - Public methods
+    public var shouldScan: Bool {
+        get { viewModel.shouldScan }
+        set { viewModel.shouldScan = newValue }
+    }
+    public func start() {
+        viewModel.command = .start
+        viewModel.shouldScan = true
+        UIView.animate(withDuration: 0.2) {
+            self.blurView.alpha = 0
+        }
+    }
+    public func stop() {
+        viewModel.command = .stop
+        UIView.animate(withDuration: 0.2) {
+            self.blurView.alpha = 1
+        }
+    }
+    
+    // MARK: - Setup methods
+    private func binds() {
         viewModel
             .$scanControl
             .sink { [weak self] control in
@@ -48,27 +71,9 @@ class ScannerViewController: UIViewController {
                 }
             }
             .store(in: &cancellable)
-        
-        /// setup - 스캐너를 초기화 하면, $scanControl 이 published 되므로 binds 전에 아래 명령이 수행되서는 안됨
+    }
+    private func setup() {
         viewModel.command = .setup
-    }
-    
-    // MARK: - Public methods
-    public var shouldScan: Bool {
-        get { viewModel.shouldScan }
-        set { viewModel.shouldScan = newValue }
-    }
-    public func start() {
-        viewModel.command = .start
-        UIView.animate(withDuration: 0.2) {
-            self.blurView.alpha = 0
-        }
-    }
-    public func stop() {
-        viewModel.command = .stop
-        UIView.animate(withDuration: 0.2) {
-            self.blurView.alpha = 1
-        }
     }
 }
 
@@ -78,7 +83,6 @@ extension ScannerViewController {
         if case .initial = scanResult { return }
         
         AudioServicesPlaySystemSound(SystemSoundID(1102))
-        
         switch scanResult {
         case .domain(let url, let inWebView, let type):
             self.presentDomain(url, inWebView, type)
@@ -89,14 +93,22 @@ extension ScannerViewController {
         }
     }
     private func presentDomain(_ url: URL, _ inWebView: Bool, _ type: String) {
-        // 도메인 링크의 경우 바텀시트 형태로 노출.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // 스캐너 노출시 animation 타이밍을 보장하기 위하여
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        DispatchQueue.main.async {
+            self.alert(message: "\(url.host ?? "알 수 없는 호스트") 를 여시겠습니까?", buttonTitles: ["취소", "열기"]) { [weak self] action in
+                guard case action.style = UIAlertAction.Style.default else {
+                    self?.shouldScan = true
+                    return
+                }
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
     }
     private func presentNone() {
-//        let error = CustomError(code: "Invalid_Code", message: "잘못된 코드입니다. 정상적인 코드인지 확인 후 다시 시도해주세요.")
-//        self.presentAlert(error: error)
+        DispatchQueue.main.async {
+            self.alert(message: "잘못된 코드입니다.\n정상적인 코드인지 확인 후 다시 시도해주세요.") { [weak self] _ in
+                self?.shouldScan = true
+            }
+        }
     }
 }
 
@@ -109,7 +121,9 @@ extension ScannerViewController {
         #if targetEnvironment(simulator)
         print("[Scanner] failure by simulator")
         #else
-        // self.presentAlert(error: error)
+        self.alert(message: error.message()) { [weak self] _ in
+            self?.shouldScan = true
+        }
         #endif
     }
 }
