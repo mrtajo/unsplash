@@ -20,8 +20,9 @@ class ScanControl: UIControl, ScanControlable {
     
     // MARK: - Init
     static func instantiate() -> ScanControl {
-        return UINib(nibName: "ScanControl", bundle: Bundle(for: self))
+        let control = UINib(nibName: "ScanControl", bundle: Bundle(for: self.classForCoder()))
             .instantiate(withOwner: self, options: nil)[0] as! ScanControl
+        return control
     }
     
     // MARK: - Properties
@@ -33,6 +34,9 @@ class ScanControl: UIControl, ScanControlable {
     private let metadataOutput = AVCaptureMetadataOutput()
     private let videoOutput = AVCaptureVideoDataOutput()
     
+    private var authStatus: AVAuthorizationStatus {
+        return AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+    }
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = {
         let layer = AVCaptureVideoPreviewLayer(session: session)
         layer.videoGravity = .resizeAspectFill
@@ -68,11 +72,23 @@ class ScanControl: UIControl, ScanControlable {
         previewLayer.frame = self.bounds
     }
     public func setup() {
-        guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else { return }
+        if authStatus == .notDetermined {
+            AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [weak self] granted in
+                DispatchQueue.main.async {
+                    self?.start()
+                }
+            })
+            return
+        }
         setupSession()
     }
     public func start() {
-        guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else { return }
+        guard authStatus == .authorized else {
+            if authStatus == .denied, let settingURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingURL, options: [:], completionHandler: nil)
+            }
+            return
+        }
         setupSession()
         startSession()
     }

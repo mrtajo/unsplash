@@ -31,6 +31,9 @@
 		EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125426D36BCF00C4930B /* HomeModel.swift */; };
 		EE65125826D371A600C4930B /* HomePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125726D371A600C4930B /* HomePhotoCell.swift */; };
 		EE65125D26D3AF1100C4930B /* UIColor+hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */; };
+		EEC4B47726E3873600BFD9D6 /* Lens.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC4B47626E3873600BFD9D6 /* Lens.xcassets */; };
+		EEC4B49326E38C9200BFD9D6 /* LensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B49226E38C9200BFD9D6 /* LensViewController.swift */; };
+		EEC4B49526E38CB000BFD9D6 /* Lens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC4B49426E38CB000BFD9D6 /* Lens.storyboard */; };
 		EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7026B65C0800DBACEA /* NetworkClient.swift */; };
 		EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF27C7326B6641E00DBACEA /* HomeViewController.swift */; };
 		EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF27C7526B6642F00DBACEA /* Home.storyboard */; };
@@ -90,6 +93,9 @@
 		EE65125726D371A600C4930B /* HomePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoCell.swift; sourceTree = "<group>"; };
 		EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexString.swift"; sourceTree = "<group>"; };
 		EE7B82490CCCD0825EA1F881 /* Pods-unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.release.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.release.xcconfig"; sourceTree = "<group>"; };
+		EEC4B47626E3873600BFD9D6 /* Lens.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Lens.xcassets; sourceTree = "<group>"; };
+		EEC4B49226E38C9200BFD9D6 /* LensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensViewController.swift; sourceTree = "<group>"; };
+		EEC4B49426E38CB000BFD9D6 /* Lens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lens.storyboard; sourceTree = "<group>"; };
 		EEF27C7026B65C0800DBACEA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EEF27C7326B6641E00DBACEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EEF27C7526B6642F00DBACEA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 			children = (
 				EE058E1326B5143F007ED253 /* Common */,
 				EEF27C7226B6640000DBACEA /* Home */,
+				EEC4B49126E38C6B00BFD9D6 /* Lens */,
 				EE058E1226B4EDC1007ED253 /* Main */,
 				EEF27C7726B66B0E00DBACEA /* Search */,
 			);
@@ -166,6 +173,7 @@
 			children = (
 				EE426A6B26B4DDEE00A16F1E /* Assets.xcassets */,
 				EE426A7026B4DDEE00A16F1E /* Info.plist */,
+				EEC4B47626E3873600BFD9D6 /* Lens.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,6 +295,15 @@
 				EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EEC4B49126E38C6B00BFD9D6 /* Lens */ = {
+			isa = PBXGroup;
+			children = (
+				EEC4B49426E38CB000BFD9D6 /* Lens.storyboard */,
+				EEC4B49226E38C9200BFD9D6 /* LensViewController.swift */,
+			);
+			path = Lens;
 			sourceTree = "<group>";
 		};
 		EEF27C6F26B65BE600DBACEA /* Network */ = {
@@ -430,8 +447,10 @@
 				EE426A6C26B4DDEE00A16F1E /* Assets.xcassets in Resources */,
 				EE426A6A26B4DDED00A16F1E /* Main.storyboard in Resources */,
 				EE2EFBB926E35F4E004FA24C /* Scanner.storyboard in Resources */,
+				EEC4B49526E38CB000BFD9D6 /* Lens.storyboard in Resources */,
 				EEF27C7626B6642F00DBACEA /* Home.storyboard in Resources */,
 				EE2EFBB826E35F4E004FA24C /* ScanControl.xib in Resources */,
+				EEC4B47726E3873600BFD9D6 /* Lens.xcassets in Resources */,
 				EEF27C7B26B66B4000DBACEA /* Search.storyboard in Resources */,
 				EE21058326C239750079EA86 /* Web.storyboard in Resources */,
 			);
@@ -573,6 +592,7 @@
 				EE2EFBBA26E35F4E004FA24C /* ScanControlable.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,
 				EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */,
+				EEC4B49326E38C9200BFD9D6 /* LensViewController.swift in Sources */,
 				EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */,
 				EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */,
 				EE2EFBBD26E35F4E004FA24C /* ScanControl.swift in Sources */,

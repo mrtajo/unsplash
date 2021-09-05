@@ -60,13 +60,15 @@ class ScannerViewController: UIViewController {
     }
     public func start() {
         viewModel.command = .start
+        UIView.animate(withDuration: 0.2) {
+            self.blurView.alpha = 0
+        }
     }
     public func stop() {
         viewModel.command = .stop
-    }
-    public func scaleFocusView(isScaleUp: Bool) {
-        self.blurView.alpha = isScaleUp ? 1.0 : 0.0
-        self.focusView.transform = isScaleUp ? CGAffineTransform(scaleX: 1.5, y: 1.5) : .identity
+        UIView.animate(withDuration: 0.2) {
+            self.blurView.alpha = 1
+        }
     }
 }
 

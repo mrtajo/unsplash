@@ -17,8 +17,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="CIG-mI-NGz" kind="relationship" relationship="viewControllers" id="0Nh-FT-H4z"/>
-                        <segue destination="uX4-2u-w0j" kind="relationship" relationship="viewControllers" id="o34-op-RKf"/>
-                        <segue destination="mKk-yw-j4Z" kind="relationship" relationship="viewControllers" id="S2b-Dp-xrj"/>
+                        <segue destination="Yrv-kY-feP" kind="relationship" relationship="viewControllers" id="9Qs-Oy-GK3"/>
+                        <segue destination="uX4-2u-w0j" kind="relationship" relationship="viewControllers" id="4hl-mu-9iy"/>
+                        <segue destination="mKk-yw-j4Z" kind="relationship" relationship="viewControllers" id="hVy-c3-bVe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQ0-oV-Diy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -34,7 +35,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OD-oO-m1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35" y="-833"/>
+            <point key="canvasLocation" x="-2600" y="1063"/>
+        </scene>
+        <!--Lens-->
+        <scene sceneID="6ge-3k-698">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lens" id="cGq-aV-EWh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="63a-wo-VuO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3o-i7-uKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1749" y="1063"/>
         </scene>
         <!--Home-->
         <scene sceneID="35D-L5-vpM">
@@ -51,7 +62,24 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDQ-Af-16J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613" y="-833"/>
+            <point key="canvasLocation" x="-2600" y="647"/>
+        </scene>
+        <!--Lens-->
+        <scene sceneID="5Vk-Vz-VrT">
+            <objects>
+                <navigationController id="Yrv-kY-feP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lens" image="qrcode" catalog="system" id="KGp-0y-jUP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Tf-H4-9a6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cGq-aV-EWh" kind="relationship" relationship="rootViewController" id="Lsn-vM-pN2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRB-dp-i2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1749" y="647"/>
         </scene>
         <!--Web-->
         <scene sceneID="AKC-hg-VaS">
@@ -68,7 +96,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlA-9J-H0j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613" y="-160"/>
+            <point key="canvasLocation" x="-809" y="647"/>
         </scene>
         <!--Web-->
         <scene sceneID="reH-m2-7Rn">
@@ -78,7 +106,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R75-WQ-H3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="-160"/>
+            <point key="canvasLocation" x="-809" y="1063"/>
         </scene>
         <!--Search-->
         <scene sceneID="hH7-Nm-uIn">
@@ -89,7 +117,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnO-A5-lf8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31" y="511"/>
+            <point key="canvasLocation" x="-36" y="1063"/>
         </scene>
         <!--Search-->
         <scene sceneID="D7o-9L-6Sb">
@@ -106,12 +134,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmv-9I-veJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613" y="511"/>
+            <point key="canvasLocation" x="-36" y="647"/>
         </scene>
     </scenes>
     <resources>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
     </resources>
 </document>

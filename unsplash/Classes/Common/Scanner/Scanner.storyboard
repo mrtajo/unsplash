@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="caY-Yd-Qnq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="caY-Yd-Qnq">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +10,7 @@
         <!--Scanner View Controller-->
         <scene sceneID="U6e-H2-qE4">
             <objects>
-                <viewController storyboardIdentifier="ScannerViewController" id="caY-Yd-Qnq" customClass="ScannerViewController" customModule="PayApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScannerViewController" id="caY-Yd-Qnq" customClass="ScannerViewController" customModule="unsplash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dWI-OH-1fX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,14 +60,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="allowDarkMode" value="NO"/>
-                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <blurEffect style="dark"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowDarkMode" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
                                     </visualEffectView>
                                 </subviews>
                                 <constraints>
@@ -77,9 +70,6 @@
                                     <constraint firstAttribute="bottom" secondItem="KYl-pw-D3D" secondAttribute="bottom" id="Efz-DU-8xe"/>
                                     <constraint firstItem="KYl-pw-D3D" firstAttribute="top" secondItem="hXZ-OO-NWH" secondAttribute="top" id="FPd-bf-WnJ"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowDarkMode" value="NO"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6PK-J8-oMp"/>
@@ -103,9 +93,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blurView" destination="hXZ-OO-NWH" id="Dei-BT-kni"/>
-                        <outlet property="focusView" destination="Knx-3j-31H" id="mAd-N4-hA2"/>
-                        <outlet property="scannerView" destination="GCS-tU-oD9" id="p64-Dt-6n4"/>
+                        <outlet property="blurView" destination="hXZ-OO-NWH" id="6PT-Hv-eM0"/>
+                        <outlet property="focusView" destination="Knx-3j-31H" id="qq3-s5-pxE"/>
+                        <outlet property="scannerView" destination="GCS-tU-oD9" id="jzy-Nh-2uT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9H-RG-ftE" userLabel="First Responder" sceneMemberID="firstResponder"/>
