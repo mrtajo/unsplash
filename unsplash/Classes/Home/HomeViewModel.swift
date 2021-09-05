@@ -15,22 +15,41 @@ struct HomeViewModel {
     // MARK: - Binds properties
     let photos: Publisher<[HomeViewModel.Photo]> = Publisher([HomeViewModel.Photo]())
     
+    var page: UInt = 0
+    var shouldFetch: Bool = true {
+        didSet {
+            print("[HomeViewModel] shouldFetch \(shouldFetch)")
+        }
+    }
+    
     // MARK: - Commands
-    func fetchPhotos() {
+    mutating func fetchPhotos() {
+        guard shouldFetch else { return }
+        shouldFetch = false
+        page += 1
+        print("[HomeViewModel] page \(page)")
+        
+        let this = self
         networkClient
             .urlString("https://api.unsplash.com/photos")
+            .page(page)
             .request { (result: Result<[HomeModel.Photo], NetworkError>) in
                 switch result {
                 case .success(let photos):
                     let viewModels = photos.map { HomeViewModel.Photo(model: $0) }
-                    var total: [HomeViewModel.Photo] = self.photos.value
-                    total.append(contentsOf: viewModels)
-                    self.photos.value = total
+                    this.appendPhotos(viewModels)
                 case .failure(let error):
                     print(error)
                 }
             }
-    }    
+    }
+    
+    private func appendPhotos(_ viewModels: [HomeViewModel.Photo]) {
+        var total: [HomeViewModel.Photo] = self.photos.value
+        total.append(contentsOf: viewModels)
+        self.photos.value = total
+    }
+    
 }
 
 extension HomeViewModel {

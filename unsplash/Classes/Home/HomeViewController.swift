@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     // MARK: - Properties
-    let viewModel = HomeViewModel()
+    var viewModel = HomeViewModel()
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
         viewModel.photos.bind { [weak self] photos in
             guard photos.count > 0 else { return }
             self?.tableView.reloadData()
+            self?.viewModel.shouldFetch = true
         }
     }
 }
@@ -60,6 +61,16 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
-extension HomeViewController: UITableViewDelegate {
-    
+extension HomeViewController: UITableViewDelegate {}
+
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.height
+        
+        if offsetY > (contentHeight - height) {
+            viewModel.fetchPhotos()
+        }
+    }
 }

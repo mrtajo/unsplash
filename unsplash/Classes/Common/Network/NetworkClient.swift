@@ -29,19 +29,26 @@ class NetworkClient {
     private let session = URLSession(configuration: .default)
     private var task: URLSessionDataTask?
     private var _urlString: String = ""
+    private var _page: UInt = 1
     
     func urlString(_ urlString: String) -> NetworkClient {
         _urlString = urlString
         return self
     }
-    
+    func page(_ page: UInt) -> NetworkClient {
+        _page = page
+        return self
+    }
     func request<ResultData: Decodable>(completion: @escaping (Result<ResultData, NetworkError>) -> Void) {
         
         guard var urlComponents = URLComponents(string: _urlString) else { return completion(.failure(.badUrl)) }
-        urlComponents.query = "client_id=\(accessKey)"
+        urlComponents.query = "client_id=\(accessKey)&page=\(_page)"
         guard let url = urlComponents.url else { return completion(.failure(.badUrl)) }
         
+        print("[NetworkClient] url \(url)")
+
         task?.cancel()
+        
         
         task = session.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else { return completion(.failure(.unknown)) }
@@ -51,7 +58,7 @@ class NetworkClient {
             }
             
 //            if let data = data, let text = String(data: data, encoding: .utf8) {
-//                print(text)
+//                print("[NetworkClient] text \(text)")
 //            }
             
             if let error = error {
