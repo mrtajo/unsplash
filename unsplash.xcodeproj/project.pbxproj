@@ -11,6 +11,9 @@
 		31D90487046FE073652A0A4D /* Pods_unsplash_unsplashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9802BD4EBCFA4C2ED406EC /* Pods_unsplash_unsplashUITests.framework */; };
 		8CE4AD70C885EF7A56112C97 /* Pods_unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4B98514F706A16F672041 /* Pods_unsplash.framework */; };
 		EE025A5F26E8E0AD000E0495 /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE025A5E26E8E0AD000E0495 /* Barcode.swift */; };
+		EE025A7D26E8EA7D000E0495 /* Home.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE025A7A26E8EA7D000E0495 /* Home.API.swift */; };
+		EE025A7E26E8EA7D000E0495 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE025A7B26E8EA7D000E0495 /* Home.swift */; };
+		EE025A7F26E8EA7D000E0495 /* Home.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE025A7C26E8EA7D000E0495 /* Home.Model.swift */; };
 		EE21058126C239280079EA86 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21058026C239280079EA86 /* WebViewController.swift */; };
 		EE21058326C239750079EA86 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE21058226C239750079EA86 /* Web.storyboard */; };
 		EE2EFBB826E35F4E004FA24C /* ScanControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2EFBB226E35F4E004FA24C /* ScanControl.xib */; };
@@ -69,6 +72,9 @@
 		95F6CC367123AA692AC45B95 /* Pods-unsplashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashTests.release.xcconfig"; path = "Target Support Files/Pods-unsplashTests/Pods-unsplashTests.release.xcconfig"; sourceTree = "<group>"; };
 		BBC4B98514F706A16F672041 /* Pods_unsplash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unsplash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE025A5E26E8E0AD000E0495 /* Barcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
+		EE025A7A26E8EA7D000E0495 /* Home.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.API.swift; sourceTree = "<group>"; };
+		EE025A7B26E8EA7D000E0495 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EE025A7C26E8EA7D000E0495 /* Home.Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.Model.swift; sourceTree = "<group>"; };
 		EE21058026C239280079EA86 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		EE21058226C239750079EA86 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		EE2EFBB226E35F4E004FA24C /* ScanControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanControl.xib; sourceTree = "<group>"; };
@@ -170,6 +176,16 @@
 			path = Barcode;
 			sourceTree = "<group>";
 		};
+		EE025A7926E8EA68000E0495 /* NameSpace */ = {
+			isa = PBXGroup;
+			children = (
+				EE025A7A26E8EA7D000E0495 /* Home.API.swift */,
+				EE025A7C26E8EA7D000E0495 /* Home.Model.swift */,
+				EE025A7B26E8EA7D000E0495 /* Home.swift */,
+			);
+			path = NameSpace;
+			sourceTree = "<group>";
+		};
 		EE058E1026B4ED1C007ED253 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +222,7 @@
 		EE058E1326B5143F007ED253 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EE025A7926E8EA68000E0495 /* NameSpace */,
 				EE025A5D26E8E0A0000E0495 /* Barcode */,
 				EE65125B26D3AEB100C4930B /* Extensions */,
 				EE65124926D35B6E00C4930B /* MVVM */,
@@ -610,11 +627,14 @@
 				EEC4B49926E4990100BFD9D6 /* UIView+parent.swift in Sources */,
 				EE2EFBBC26E35F4E004FA24C /* ScannerViewController.swift in Sources */,
 				EE2EFBBA26E35F4E004FA24C /* ScanControlable.swift in Sources */,
+				EE025A7F26E8EA7D000E0495 /* Home.Model.swift in Sources */,
 				EE426A6326B4DDED00A16F1E /* AppDelegate.swift in Sources */,
+				EE025A7E26E8EA7D000E0495 /* Home.swift in Sources */,
 				EE426A6526B4DDED00A16F1E /* SceneDelegate.swift in Sources */,
 				EEC4B49326E38C9200BFD9D6 /* LensViewController.swift in Sources */,
 				EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */,
 				EEF27C7126B65C0800DBACEA /* NetworkClient.swift in Sources */,
+				EE025A7D26E8EA7D000E0495 /* Home.API.swift in Sources */,
 				EE2EFBBD26E35F4E004FA24C /* ScanControl.swift in Sources */,
 				EE65124B26D35BB000C4930B /* Publisher.swift in Sources */,
 			);
