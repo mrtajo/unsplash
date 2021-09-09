@@ -35,6 +35,7 @@
 		EE65125526D36BCF00C4930B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125426D36BCF00C4930B /* HomeModel.swift */; };
 		EE65125826D371A600C4930B /* HomePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125726D371A600C4930B /* HomePhotoCell.swift */; };
 		EE65125D26D3AF1100C4930B /* UIColor+hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */; };
+		EE9AB25526E98F1600E8EBB9 /* Home.Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9AB25426E98F1600E8EBB9 /* Home.Action.swift */; };
 		EEC4B47726E3873600BFD9D6 /* Lens.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC4B47626E3873600BFD9D6 /* Lens.xcassets */; };
 		EEC4B49326E38C9200BFD9D6 /* LensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B49226E38C9200BFD9D6 /* LensViewController.swift */; };
 		EEC4B49526E38CB000BFD9D6 /* Lens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC4B49426E38CB000BFD9D6 /* Lens.storyboard */; };
@@ -103,6 +104,7 @@
 		EE65125726D371A600C4930B /* HomePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoCell.swift; sourceTree = "<group>"; };
 		EE65125C26D3AF1100C4930B /* UIColor+hexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexString.swift"; sourceTree = "<group>"; };
 		EE7B82490CCCD0825EA1F881 /* Pods-unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplash.release.xcconfig"; path = "Target Support Files/Pods-unsplash/Pods-unsplash.release.xcconfig"; sourceTree = "<group>"; };
+		EE9AB25426E98F1600E8EBB9 /* Home.Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.Action.swift; sourceTree = "<group>"; };
 		EEC4B47626E3873600BFD9D6 /* Lens.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Lens.xcassets; sourceTree = "<group>"; };
 		EEC4B49226E38C9200BFD9D6 /* LensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensViewController.swift; sourceTree = "<group>"; };
 		EEC4B49426E38CB000BFD9D6 /* Lens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lens.storyboard; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		EE025A7926E8EA68000E0495 /* NameSpace */ = {
 			isa = PBXGroup;
 			children = (
+				EE9AB25426E98F1600E8EBB9 /* Home.Action.swift */,
 				EE025A7A26E8EA7D000E0495 /* Home.API.swift */,
 				EE025A7C26E8EA7D000E0495 /* Home.Model.swift */,
 				EE025A7B26E8EA7D000E0495 /* Home.swift */,
@@ -222,13 +225,13 @@
 		EE058E1326B5143F007ED253 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				EE025A7926E8EA68000E0495 /* NameSpace */,
 				EE025A5D26E8E0A0000E0495 /* Barcode */,
 				EE65125B26D3AEB100C4930B /* Extensions */,
 				EE65124926D35B6E00C4930B /* MVVM */,
+				EE025A7926E8EA68000E0495 /* NameSpace */,
 				EEF27C6F26B65BE600DBACEA /* Network */,
-				EE21057F26C239080079EA86 /* Web */,
 				EE2EFBB126E35E77004FA24C /* Scanner */,
+				EE21057F26C239080079EA86 /* Web */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				EE65125826D371A600C4930B /* HomePhotoCell.swift in Sources */,
 				EEF27C7426B6641E00DBACEA /* HomeViewController.swift in Sources */,
 				EE025A5F26E8E0AD000E0495 /* Barcode.swift in Sources */,
+				EE9AB25526E98F1600E8EBB9 /* Home.Action.swift in Sources */,
 				EE65125D26D3AF1100C4930B /* UIColor+hexString.swift in Sources */,
 				EEC4B49926E4990100BFD9D6 /* UIView+parent.swift in Sources */,
 				EE2EFBBC26E35F4E004FA24C /* ScannerViewController.swift in Sources */,

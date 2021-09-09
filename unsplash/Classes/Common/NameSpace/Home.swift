@@ -7,21 +7,22 @@
 
 import Foundation
 
-struct Home {}
-
-extension Home{
+struct Home {
     struct Model {}
     struct API {
         typealias Model = Home.Model
+        static let networkClient = NetworkClient()
     }
     struct Action {
         typealias Model = Home.Model
         typealias API = Home.API
+        static var photos = [Model.Photo]()
     }
 }
 
 protocol HomeNamespace {
-    typealias API = Home.API
     typealias Model = Home.Model
+    typealias API = Home.API
     typealias Action = Home.Action
 }
+
